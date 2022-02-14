@@ -1,0 +1,23 @@
+<body>
+    <textarea></textarea>
+    <button onclick="del()">지 우 기</button>
+    <script>
+        let name = 1
+        if(name) {
+            console.log(name);
+        }
+
+        console.log([] ? true : false);
+        console.log({} ? true : false);
+
+        function del() {
+            //input 사용 방법 동일
+            const textarea = document.querySelector('textarea');
+            let text = textarea.value;
+            //01234 - index
+            //12345 - value
+            text = text.substring(0, text.length - 1);
+            textarea.value = text;
+        }
+    </script>
+</body>

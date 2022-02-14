@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body onkeydown="run(event)">
+    <p id="demo">text</p>
+    <button type="button" onclick="change()">change</button>
+    <script>
+        window.onload = () => {
+        document.getElementById("demo").innerHTML = "하하하";
+        }
+        function change() {
+            document.getElementById("demo").innerHTML = "sss";
+        }
+        function run(event) {
+            //출력방법!
+            console.log(event);
+            if (event.keyCode ==65) {
+                document.body.style.backgroundColor = 'lightblue';
+            } else if (event.keyCode ==66) {
+                document.body.style.backgroundColor = 'lightgreen';
+            }
+        }
+    </script>
+</body>
+
+</html>
