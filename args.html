@@ -1,0 +1,40 @@
+<body>
+    <script>
+        
+        function printAll(...args) {
+            //화살표 함수 Arrow function
+            args.forEach( (v,i,a)=>console.log(v,i,a) );
+
+
+            console.log(typeof args);
+            console.log(args);
+
+            // Array API
+            // 자바에서는 인터페이스를 사용
+            args.forEach(function(v,i,a) {
+                console.log(i.toString());
+            })
+            args.map(function(vv,ii,aa){
+                console.log(vv,ii,aa);
+            })
+            for(let i=0; i<args.length; i++) {
+                console.log(args[i]);
+            }
+
+        }
+        printAll(1,2,3,'a');
+
+
+
+        //자바스크립트에서는 오버로딩 개념 없음
+        function printAll2(){
+            console.log(arguments);
+            for(let i=0; i<arguments.length; i++) {
+                console.log(arguments[i]);
+            }
+        }
+        printAll2();
+        printAll2(1);
+        printAll2(1,2,3);
+    </script>
+</body>

@@ -1,0 +1,29 @@
+<body>
+    <script>
+        const sss = function(ab){
+            let lat = ab.coords.latitude;
+            console.log(lat);
+        };
+        //비동기로 동작
+        navigator.geolocation.getCurrentPosition(sss);
+        
+        //기존 함수의 사용법을 모를 때 팁
+        navigator.geolocation.getCurrentPosition(function(ab) {
+            //??????
+           let lat = ab.coords.latitude
+           let lot = ab.coords.longitude
+           console.log(lat,lot)
+        });
+
+        //어떠한 형식의 함수든 관계 없음
+        function outer() {
+            console.log('outer!');
+            return function inner() {
+                console.log('inner!');
+            }
+        }
+        outer()();
+        // const a = outer();
+        // a();
+    </script>
+</body>

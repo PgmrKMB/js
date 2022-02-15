@@ -1,0 +1,24 @@
+<body>
+    <script>
+        const lotto = [1, 8, 16];
+        let count = 0;
+        while (true) {
+            const selected = [];
+            while (selected.length < 3) {
+                const num = parseInt(Math.random() * 45) + 1;
+                if (selected.indexOf(num) == -1) {
+                    selected.push(num);
+                }
+            }
+            selected.sort((a, b) => a - b);
+            console.log(selected);
+            count++;
+
+            if (lotto == selected.toString()) {
+                console.log('맞히기 성공');
+                break;
+            }
+        }
+        console.log(`시도횟수 : ${count}`);
+    </script>
+</body>

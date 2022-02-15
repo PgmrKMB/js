@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        NAME : <input type='text' name='user_name' id="aa"><br>
+        NICKNAME : <input type='text' name='user_nick_name' id="bb"><br>
+        <input type='button' value='OK' onclick='check()'>
+    </form>
+
+    <script>
+        function check() {
+            const a = document.getElementById("aa").value;
+            const b = document.querySelector("[name=user_nick_name]").value;
+            console.log(a);
+            console.log(b);
+            if(a === ''){
+                alert('NAME을 입력해주세요')
+            }
+            if(b === ''){
+                document.getElementById("bb").value = a
+                document.querySelector("[name=user_name]").value = '';
+            }
+
+        }
+    </script>
+</body>
+</html>
