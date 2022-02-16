@@ -1,0 +1,44 @@
+<body>
+    <script>
+        const obj = {
+            name: 'Mike',
+            address: {
+                si: '세종',
+                uep: '조치원'
+            },
+            hobby: [
+                {
+                    name: '당구',
+                    desc: '3쿠션'
+                },
+                {
+                    name: '먹방',
+                    desc: '중국음식'
+                }
+            ]
+        };
+
+        let totalAge = 0;
+        if ('age' in obj) {
+            const age = obj.age;
+            totalAge += age;
+        }
+        console.log(totalAge);
+
+        const uep = obj.address.uep;
+        console.log(uep);
+        console.log(obj.name);
+
+        //취미
+        //당구
+        //먹방-중국음식
+
+        //console.log(`${obj.hobby[0].name} - ${obj.hobby[0].desc}`);
+
+        for (let i = 0; i<obj.hobby.length; i++) {
+            console.log(`${obj.hobby[i].name} - ${obj.hobby[i].desc}`);
+        }
+
+
+    </script>
+</body>
