@@ -5,11 +5,11 @@
             if(answer) fnPrint('yes!');
             else       fnPrint('no!');
             }
-        function abc(result) {
+        function callback(result) {
             console.log(result);
         }
 
-        quiz(true, abc);
+        quiz(true, callback);
         quiz(false, function(res){
             console.log(res);
         });

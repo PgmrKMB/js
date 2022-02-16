@@ -140,21 +140,26 @@
                 "completed": false
             }
         ]
-        // let code = '';
-        // for (let todo of todo_data) {
-        //     const Id = todo.id;
-        //     const userId = todo.userId;
-        //     const title = todo.title;
-        // }
 
-
-
-        for (let k in todo_data)
-            console.log(todo_data[k].id, todo_data[k].userId, todo_data[k].title);
-
-        for (i = 0; i < todo_data.length; i++) {
-            document.body.innerHTML += `<ul><li> id: ${todo_data[i].id}</li><li> userId: ${todo_data[i].userId}</li><li> title: ${todo_data[i].title}</li></ul>`;
+        let code = `<table = border="1">`;
+        code += '<tr><td>ID</td><td>userId</td><td>title</td></tr >'
+        const to = todo_data
+        for (let todo of to) {
+            const Id = todo.id;
+            const userId = todo.userId;
+            const title = todo.title;
+            code += `<tr><td>${Id}</td><td>${userId}</td><td>${title}</td></tr>`;
         }
+        code += '</table>';
+        document.querySelector('body').innerHTML += code
+
+
+        // for (let k in todo_data)
+        //     console.log(todo_data[k].id, todo_data[k].userId, todo_data[k].title);
+
+        // for (i = 0; i < todo_data.length; i++) {
+        //     document.body.innerHTML += `<ul><li> id: ${todo_data[i].id}</li><li> userId: ${todo_data[i].userId}</li><li> title: ${todo_data[i].title}</li></ul>`;
+        // }
     </script>
 
     <div></div>
