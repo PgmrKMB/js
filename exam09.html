@@ -246,10 +246,27 @@
                 }
             ]
         };
-
-        for(i=0;i<top_headlines.articles.length;i++){
-        document.body.innerHTML += `<ul><li> Title: ${top_headlines.articles[i].title}</li> <li> WriteTime: ${top_headlines.articles[i].publishedAt}</li></ul>`
+        let code = '<table = border="1">';
+            code += '<tr><td>제목</td><td>이미지</td><td>일시</td></tr>';
+        const aaa = top_headlines.articles;
+        for(let key in aaa) {
+            const abc = aaa[key];
+            const title = abc.title;
+            const urlToImage = abc.urlToImage;
+            const publishedAt = abc.publishedAt;
+            code += `<tr>
+                <td>${title}</td>
+                <td><img src='${urlToImage}' style='width:50px;'></td>
+                <td>${publishedAt}</td></tr>`;
         }
+        code += '</table>';
+        document.querySelector('body').innerHTML += code;
+
+
+
+        // for(i=0;i<top_headlines.articles.length;i++){
+        // document.body.innerHTML += `<ul><li> Title: ${top_headlines.articles[i].title}</li> <li> WriteTime: ${top_headlines.articles[i].publishedAt}</li></ul>`
+        // }
     </script>
 
 </body>
