@@ -1,0 +1,33 @@
+<body>
+    <script>
+        // function simplePrint() {}
+
+        const simplePrint = function () {
+            console.log('simplePrint!');
+        };
+        
+        //cf. JAVA : Lamda '->'
+        const simplePrint2 = () => {
+            console.log('simplePrint2!');
+        };
+        simplePrint();
+        simplePrint2();
+
+//=============================================================
+
+        function minus(a, b) {
+            return a - b;
+        }
+        const minus1 = (a, b) => {
+            return a - b;
+        };
+        const minus2 = (a, b) => a - b;  // 중괄호 미사용 자동 return
+        
+        const minus3 = (a, b) => console.log(a - b);
+
+        console.log(minus(5, 3));
+        console.log(minus1(7, 3));
+        console.log(minus2(10, 3));
+        minus3(13, 3);
+    </script>
+</body>

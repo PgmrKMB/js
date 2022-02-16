@@ -2,24 +2,36 @@
     <div id="map" style="width:500px;height:400px;"></div>
     <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2be20ca0a50df1e82e1ef6c4f832ca69"></script>
     <script>
-        let lat;
-        let lot;
-        navigator.geolocation.getCurrentPosition(function (ab) {
-            lat = ab.coords.latitude
-            lot = ab.coords.longitude
-            
-            console.log(lat, lot);
-            
-            
-            const container = document.querySelector('#map');
-            const options = {
-                center: new kakao.maps.LatLng(lat,lot),
-                level: 3
-            };
-            
-            const map = new kakao.maps.Map(container, options);
-        });
-            
+        function setCenter(a, b) {
+            // 이동할 위도 경도 위치를 생성합니다 
+            var moveLatLon = new kakao.maps.LatLng(a, b);
+            // 지도 중심을 이동 시킵니다
+            map.setCenter(moveLatLon);
+        }
+
+        navigator.geolocation.getCurrentPosition(ab=>{
+            let lat = ab.coords.latitude
+            let lng = ab.coords.longitude
+            console.log(lat, lng);
+            setCenter(lat, lng)
+        })
+
+        // navigator.geolocation.getCurrentPosition(function (ab) {
+        //     let lat = ab.coords.latitude
+        //     let lng = ab.coords.longitude
+        //     console.log(lat, lng);
+        //     setCenter(lat, lng)
+        // });
+
+        const container = document.querySelector('#map');
+        const options = {
+            center: new kakao.maps.LatLng(33.45, 126.57),
+            level: 3
+        };
+
+        const map = new kakao.maps.Map(container, options);
 
     </script>
 </body>
+
+<!--  jsoup - java rest api -->

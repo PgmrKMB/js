@@ -1,0 +1,24 @@
+<body>
+    <script>
+        //함수를 소괄호로 감싸주고 ()를 바로 붙여서 실행
+        (function () {
+            // 내부에서 정의된 변수는 외부에서 접근 불가
+            var aName = "Kate";
+            console.log(aName);
+        })();
+
+        //console.log(aName);  - not defined
+
+        function sequence() {
+            let seq = 0;
+            return function () {
+                return ++seq;
+            };
+        }
+        const s = sequence();
+        console.log(s());
+        console.log(s());
+        console.log(s());
+        
+    </script>
+</body>
