@@ -1,0 +1,26 @@
+<body>
+    <script>
+        const arr = [{a:1,b:2},10, 6, 3,{a:1,b:2,c:3}, 8, 2, 16];
+        console.log(arr);
+
+        arr.sort(function(next, prev) {
+            return next - prev;
+        });
+        console.log(arr);
+
+        const arr2 = [
+            {age:22, name:'a'},
+            {age:19, name:'b'},
+            {age:34, name:'c'},
+            {age:22, name:'d'},
+            {age:88, name:'e'},
+            {age:21, name:'f'}
+        ];
+        console.log(arr2);
+
+        arr2.sort((a,b)=>{
+            return a.age - b.age;
+        });
+
+    </script>
+</body>

@@ -1,0 +1,40 @@
+<body>
+    <script>
+        const max = (array) => {
+            array.sort((a, b) => b - a);
+            let output = array[0];
+            return output;
+        };
+        console.log(max([1, 2, 3, 4]));
+        
+        
+        
+        const max1 = (array) => {
+            
+            let output = array[0];
+            array.forEach((v) => {
+                output = v > output ? v : output;
+            });
+            for(let i = 0 ; i < array.length ; i++) {
+
+            }
+
+            return output;
+        };
+        console.log(max([1, 2, 3, 4]));
+
+        const aa = [1,3,5,7,9];
+        
+        for( xx of aa){
+
+            console.log(xx);
+            console.log(Math.max());
+        }
+
+        console.log(Math.max(...aa));
+
+
+
+
+    </script>
+</body>

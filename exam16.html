@@ -1,0 +1,38 @@
+<body>
+    <script>
+        class Student {
+            constructor(name, age, enrolled, score) {
+                this.name = name;
+                this.age = age;
+                this.enrolled = enrolled;
+                this.score = score;
+            }
+        }
+        const students = [
+            new Student('A', 29, true, 45),
+            new Student('B', 28, false, 80),
+            new Student('C', 30, true, 90),
+            new Student('D', 40, false, 66),
+            new Student('E', 18, true, 90),
+        ];
+
+        const a = students.map((abc)=>{
+            // return abc.score
+            return {age: abc.age, score: abc.score}
+        });
+        console.log(a);
+        
+        const b = students.map((abc)=>{
+            if(abc.score>=50){
+                return `${abc.name} | ${abc.age} `
+            }
+        })
+        const c = students.filter(v=> v.score>=50).map(v=>v.name);
+        
+        c.sort((a, b)=> b.charCodeAt(0) - a.charCodeAt(0) );
+
+        console.log(b); // map은 모든 요소에 접근하기 때문에 undefined가 생김
+        console.log(c.join());
+       
+    </script>
+</body>
